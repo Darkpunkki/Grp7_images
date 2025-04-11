@@ -37,6 +37,9 @@ def split_train():
             index = random.randint(0, len(d) - 1)
         checked_indexes.append(index)
         os.replace(p + d[index], "images/validation/" + k + d[index])
+        
+    for image in d:
+        os.replace(p + image, "images/train/" + k + image)
 
 resize()
 split_train()
